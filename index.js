@@ -38,7 +38,7 @@ export const loadLazyRemoteComponent = ({
   componentName,
 }) =>
   lazy(() =>
-    loadRemoteModule({ url, scope, module }).then(
-      (module) => module[componentName]
-    )
+    loadRemoteModule({ url, scope, module }).then((module) => ({
+      default: module[componentName],
+    }))
   );
