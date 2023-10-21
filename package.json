@@ -1,10 +1,13 @@
 {
   "name": "react-remote-helpers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
 }

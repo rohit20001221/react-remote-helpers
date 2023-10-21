@@ -1,3 +1,5 @@
+import { lazy } from "react";
+
 export const loadScope = (url, scope) => {
   const element = document.createElement("script");
   const promise = new Promise((resolve, reject) => {
@@ -25,3 +27,6 @@ export const loadRemoteModule = async ({ url, scope, module }) => {
     throw error;
   }
 };
+
+export const loadLazyRemoteModule = ({ url, scope, module }) =>
+  lazy(() => loadRemoteModule({ url, scope, module }));
