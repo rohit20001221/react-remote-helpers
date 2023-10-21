@@ -30,3 +30,15 @@ export const loadRemoteModule = async ({ url, scope, module }) => {
 
 export const loadLazyRemoteModule = ({ url, scope, module }) =>
   lazy(() => loadRemoteModule({ url, scope, module }));
+
+export const loadLazyRemoteComponent = ({
+  url,
+  scope,
+  module,
+  componentName,
+}) =>
+  lazy(() =>
+    loadRemoteModule({ url, scope, module }).then(
+      (module) => module[componentName]
+    )
+  );
